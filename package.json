@@ -1,21 +1,29 @@
 {
-  "name": "playtime",
-  "version": "0.1.0",
+  "name": "fullstackexam1",
+  "version": "1.0.0",
   "description": "",
-  "license": "ISC",
-  "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automatron76/FullStackExam.git"
+  },
+  "author": "Gio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Automatron76/FullStackExam/issues"
+  },
+  "homepage": "https://github.com/Automatron76/FullStackExam#readme",
   "devDependencies": {
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
-    "prettier": "^3.4.2"
+    "prettier": "^3.5.1"
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.12",

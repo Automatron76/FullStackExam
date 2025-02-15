@@ -3,12 +3,12 @@ import { db } from "../models/db.js";
 export const accountsController = {
   index: {
     handler: function (request, h) {
-      return h.view("main", { title: "Welcome to Playlist" });
+      return h.view("main", { title: "Welcome to City's Points of View" });
     },
   },
   showSignup: {
     handler: function (request, h) {
-      return h.view("signup-view", { title: "Sign up for Playlist" });
+      return h.view("signup-view", { title: "Sign up " });
     },
   },
   signup: {
@@ -20,7 +20,7 @@ export const accountsController = {
   },
   showLogin: {
     handler: function (request, h) {
-      return h.view("login-view", { title: "Login to Playlist" });
+      return h.view("login-view", { title: "Login to City's Points of view" });
     },
   },
   login: {
@@ -39,3 +39,4 @@ export const accountsController = {
     },
   },
 };
+

@@ -3,21 +3,21 @@ import { db } from "../models/db.js";
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
-      const playlists = await db.playlistStore.getAllPlaylists();
+      const playlists = await db.pointsOfViewMemStore.getAllPointsOfView();
       const viewData = {
-        title: "Playtime Dashboard",
-        playlists: playlists,
+        title: "City Dashboard",
+        cities: citiess,
       };
       return h.view("dashboard-view", viewData);
     },
   },
 
-  addPlaylist: {
+  addCity: {
     handler: async function (request, h) {
-      const newPlayList = {
+      const newCity = {
         title: request.payload.title,
       };
-      await db.playlistStore.addPlaylist(newPlayList);
+      await db.pointsOfViewMemStore.addPointOfView(newCity);
       return h.redirect("/dashboard");
     },
   },
