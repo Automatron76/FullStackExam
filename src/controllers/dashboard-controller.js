@@ -3,10 +3,10 @@ import { db } from "../models/db.js";
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
-      const playlists = await db.pointsOfViewMemStore.getAllPointsOfView();
+      const cities = await db.pointsOfView.getAllPointsOfView();
       const viewData = {
         title: "City Dashboard",
-        cities: citiess,
+        cities: cities,
       };
       return h.view("dashboard-view", viewData);
     },
