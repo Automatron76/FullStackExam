@@ -1,30 +1,44 @@
 import { v4 } from "uuid";
 
-let pointsOfView = []; 
+let poes = [];
 
-export const pointsOfViewMemStore = {
-  async getAllPointsOfView() {
-    return pointsOfView;  
+export const poeMemStore = {
+  async getAllPoes() {
+    return poes;
   },
 
-  async addPointOfView(pointOfView) {  
-    pointOfView._id = v4();  
-    pointsOfView.push(pointOfView); 
-    return pointOfView;   
-},
-
-  async getPointOfViewById(id) {  
-    return pointsOfView.find((point) => point._id === id); 
+  async addPoe(cityid, poe) {
+    poe._id = v4();
+    poe.cityid = cityid;
+    console.log("Adding POE:", poe); // Debugging
+    poes.push(poe);
+    return poe;
   },
 
-  async deletePointOfViewById(id) { 
-    const index = pointsOfView.findIndex((point) => point._id === id); 
-    if (index !== -1) {
-      pointsOfView.splice(index, 1); 
-    }
+  async getPoesByCityId(id) {
+    return poes.filter((poe) => poe.cityid === id);
   },
 
-  async deleteAllPointsOfView() { 
-    pointsOfView = []; 
+  async getPoeById(id) {
+    return poes.find((poe) => poe._id === id);
+  },
+
+  async getCityPoes(cityid) {
+    return poes.filter((poe) => poe.cityid === cityid);
+  },
+
+  async deletePoe(id) {
+    const index = poes.findIndex((poe) => poe._id === id);
+    poes.splice(index, 1);
+  },
+
+  async deleteAllPoes() {
+    poes = [];
+  },
+
+  async updatePoe(poe, updatedPoe) {
+    poe.name = updatedPoe.name;
+    poe.address = updatedPoe.address;
+    poe.Vduration = updatedPoe.Vduration;
   },
 };

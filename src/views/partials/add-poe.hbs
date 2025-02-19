@@ -1,6 +1,19 @@
-<form action="/dashboard/addplaylist" method="POST"> # da correggere
-  <div class="field">
-    <label class="label">City's Point of Interests</label> <input class="input" type="text" placeholder="Enter City name" name="title">
+
+<form class="box" action="/city/{{city._id}}/addpoe" method="POST">
+{{> city.name}}
+  <label>Enter Point of interest Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Name" name="name">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Address" name="address">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Visit duration" name="Vduration">
+      </div>
+    </div>
   </div>
-  <button class="button is-link">Add City</button>
+  <button class="button is-primary">Add place to visit</button>
 </form>

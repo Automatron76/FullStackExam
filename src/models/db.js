@@ -1,12 +1,15 @@
 import { userMemStore } from "./mem/user-mem-store.js";
-import { pointsOfViewMemStore } from "./mem/poe-mem-store.js";
+import { cityMemStore } from "./mem/city-mem-store.js";  // Make sure this matches your actual file
+import { poeMemStore } from "./mem/poe-mem-store.js";
 
 export const db = {
   userStore: null,
-  pointsOfView: null,
+  cityStore: null,
+  poeStore: null,
 
   init() {
     this.userStore = userMemStore;
-    this.pointsOfView = pointsOfViewMemStore;
+    this.cityStore = cityMemStore;
+    this.poeStore =  poeMemStore;
   },
 };

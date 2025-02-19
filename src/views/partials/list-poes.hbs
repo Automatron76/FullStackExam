@@ -1,7 +1,27 @@
-{{#each cities}}
-  <div class="box box-link-hover-shadow">
-    <h2 class="title">
-      {{title}}
-    </h2>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Visit Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each city.poes}}
+    
   </div>
-{{/each}}
+      <tr>
+        <td>
+          {{name}}
+        </td>
+        <td>
+          {{address}}
+        </td>
+        <td>
+          {{Vduration}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
