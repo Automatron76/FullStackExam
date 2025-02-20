@@ -40,7 +40,7 @@ async function init() {
     redirectTo: "/",
     validate: accountsController.validate,
   });
-  //server.auth.default("session");
+  server.auth.default("session");
 
   db.init();
   server.route(webRoutes);

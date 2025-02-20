@@ -5,8 +5,13 @@ export const dashboardController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const cities = await db.cityStore.getUserCities(loggedInUser._id);
+
+      console.log("Fetched cities for user:", loggedInUser._id, cities);
+
+
       const viewData = {
         title: "City Dashboard",
+        user: loggedInUser,
         cities: cities,
       };
       return h.view("dashboard-view", viewData);
