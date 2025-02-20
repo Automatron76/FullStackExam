@@ -17,4 +17,8 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addcity", config: dashboardController.addCity },
+
+  { method: "GET", path: "/dashboard/deletecity/{id}", config: dashboardController.deleteCity },
+  { method: "GET", path: "/city/{id}/deletepoe/{poeid}", config: cityController.deletePoe },
+
 ];

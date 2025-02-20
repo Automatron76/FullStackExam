@@ -35,4 +35,13 @@ export const cityController = {
       return h.redirect(`/city/${city._id}`);
     },
   },
+
+  deletePoe: {
+    handler: async function(request, h) {
+      const city = await db.cityStore.getCityById(request.params.id);
+      await db.poeStore.deletePoe(request.params.poeid);
+      return h.redirect(`/city/${city._id}`);
+    },
+  },
+
 };
