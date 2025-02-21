@@ -7,6 +7,8 @@ import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import Cookie from "@hapi/cookie";
 import { accountsController } from "./controllers/accounts-controller.js";
+import dotenv from "dotenv";
+import Joi from "joi";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,8 +18,11 @@ async function init() {
     port: 3000,
     host: "localhost",
   });
+  
   await server.register(Vision);
   await server.register(Cookie);
+  server.validator(Joi);
+
 
   server.views({
     engines: {
@@ -30,6 +35,12 @@ async function init() {
     layout: true,
     isCached: false, 
   });
+
+  const result = dotenv.config();
+  if (result.error) {
+  console.log(result.error.message);
+  process.exit(1);
+}
 
   server.auth.strategy("session", "cookie", {
     cookie: {
