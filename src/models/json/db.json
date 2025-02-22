@@ -1,11 +1,25 @@
 {
   "users": [
     {
-      "firstName": "gio",
-      "lastName": "s",
-      "email": "gio1@mail.com",
-      "password": "1234",
-      "_id": "78d8d712-a171-4b2c-823a-edcc81971c4d"
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "18c50553-63ef-4512-b9f2-0bd270dc50e6"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "86c56d9f-2724-4d26-a9b3-ee0a6730f372"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "774cdde3-103d-4196-bbfe-972fac4ed523"
     }
   ],
   "cities": [
