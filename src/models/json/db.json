@@ -5,28 +5,35 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "18c50553-63ef-4512-b9f2-0bd270dc50e6"
+      "_id": "c0fa7ec0-e124-4e4a-9085-d0ec17a8250a"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "86c56d9f-2724-4d26-a9b3-ee0a6730f372"
+      "_id": "897ddaab-753e-4bea-b2e1-cf664ab3689a"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "774cdde3-103d-4196-bbfe-972fac4ed523"
+      "_id": "77d5bedb-7d97-464c-b3d8-46dd95013240"
     }
   ],
   "cities": [
     {
-      "userid": "78d8d712-a171-4b2c-823a-edcc81971c4d",
-      "name": "Cagliari",
-      "_id": "5a9bb708-d4fa-41cb-a29b-0bcd5ffcdef9"
+      "name": "Beethoven Sonatas",
+      "_id": "8229bd56-c186-4bbe-8255-2a888b279245"
+    },
+    {
+      "name": "Beethoven Concertos",
+      "_id": "e18eb65e-2400-4941-856c-b661bff781f6"
+    },
+    {
+      "name": "Beethoven Symphonies",
+      "_id": "c9ddadb5-2339-4490-98a3-5fa8377580c1"
     }
   ],
   "poes": [

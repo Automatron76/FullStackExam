@@ -18,8 +18,12 @@ export const cityJsonStore = {
 
   async getCityById(id) {
     await db.read();
-    const list = db.data.cities.find((city) => city._id === id);
-    list.poes = await poeJsonStore.getPoesByCityId(list._id);
+    let list = db.data.cities.find((city) => city._id === id);
+    if (list) {
+      list.poes = await poeJsonStore.getPoesByCityId(list._id);
+    } else {
+      list = null;
+    }
     return list;
   },
 
@@ -31,7 +35,7 @@ export const cityJsonStore = {
   async deleteCityById(id) {
     await db.read();
     const index = db.data.cities.findIndex((city) => city._id === id);
-    db.data.cities.splice(index, 1);
+    if (index !== -1) db.data.cities.splice(index, 1);
     await db.write();
   },
 

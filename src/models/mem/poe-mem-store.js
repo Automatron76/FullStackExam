@@ -20,16 +20,24 @@ export const poeMemStore = {
   },
 
   async getPoeById(id) {
-    return poes.find((poe) => poe._id === id);
+    let foundPoe = poes.find((poe) => poe._id === id);
+    if (!foundPoe) {
+      foundPoe = null;
+    }
+    return foundPoe;
   },
 
   async getCityPoes(cityid) {
-    return poes.filter((poe) => poe.cityid === cityid);
+    let foundPoes = poes.filter((poe) => poe.cityid === cityId);
+    if (!foundPoes) {
+      foundPoes = null;
+    }
+    return foundPoes;
   },
 
   async deletePoe(id) {
     const index = poes.findIndex((poe) => poe._id === id);
-    poes.splice(index, 1);
+    if (index !== -1) poes.splice(index, 1);
   },
 
   async deleteAllPoes() {

@@ -18,18 +18,26 @@ export const poeJsonStore = {
 
   async getPoesByCityId(id) {
     await db.read();
-    return db.data.poes.filter((poe) => poe.cityid === id);
+    let foundPoes = db.data.poes.filter((poe) => poe.cityid === id);
+    if (!foundPoes) {
+      foundPoes = null;
+    }
+    return foundPoes;
   },
 
   async getPoeById(id) {
     await db.read();
-    return db.data.poes.find((poe) => poe._id === id);
+    let foundPoe = db.data.poes.find((poe) => poe._id === id);
+    if (!foundPoe) {
+      foundPoe = null;
+    }
+    return foundPoe;
   },
 
   async deletePoe(id) {
     await db.read();
     const index = db.data.poes.findIndex((poe) => poe._id === id);
-    db.data.poes.splice(index, 1);
+    if (index !== -1) db.data.poes.splice(index, 1);
     await db.write();
   },
 
