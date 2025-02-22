@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "firstName": "gio",
+      "lastName": "s",
+      "email": "gio1@mail.com",
+      "password": "1234",
+      "_id": "78d8d712-a171-4b2c-823a-edcc81971c4d"
+    }
+  ],
+  "cities": [
+    {
+      "userid": "78d8d712-a171-4b2c-823a-edcc81971c4d",
+      "name": "Cagliari",
+      "_id": "5a9bb708-d4fa-41cb-a29b-0bcd5ffcdef9"
+    }
+  ],
+  "poes": [
+    {
+      "name": "Piazza Yenne",
+      "address": "09124 Cagliari CA, Italy",
+      "Vduration": 15,
+      "_id": "f74501f9-a29a-4526-873a-2432bbb0fe9a",
+      "cityid": "5a9bb708-d4fa-41cb-a29b-0bcd5ffcdef9"
+    },
+    {
+      "name": "Quartiere Stampace",
+      "address": "Stampace Cagliari, Metropolitan City of Cagliari, Italy",
+      "Vduration": 20,
+      "_id": "dd650524-219f-4d40-8926-df1ca6e483f5",
+      "cityid": "5a9bb708-d4fa-41cb-a29b-0bcd5ffcdef9"
+    },
+    {
+      "name": "Buoncammino",
+      "address": "Viale Buoncammino Cagliari CA, Italy",
+      "Vduration": 15,
+      "_id": "a02a2008-8c26-4f88-a1d0-9ddaa7d84b71",
+      "cityid": "5a9bb708-d4fa-41cb-a29b-0bcd5ffcdef9"
+    }
+  ]
+}

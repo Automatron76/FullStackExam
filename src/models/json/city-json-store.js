@@ -19,7 +19,7 @@ export const cityJsonStore = {
   async getCityById(id) {
     await db.read();
     const list = db.data.cities.find((city) => city._id === id);
-    list.poes = await poeJsonStore.getPoesByPlaylistId(list._id);
+    list.poes = await poeJsonStore.getPoesByCityId(list._id);
     return list;
   },
 

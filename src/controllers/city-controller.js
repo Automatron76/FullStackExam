@@ -1,15 +1,13 @@
 import { db } from "../models/db.js";
+import { PoeSpec } from "../models/joi-schemas.js";
 
 export const cityController = {
   index: {
     handler: async function (request, h) {
       const city = await db.cityStore.getCityById(request.params.id);
 
-      
-
-
       const viewData = {
-        title: "City",
+        name: "City",   //aggiunto name instead of title
         city: city,
       };
       return h.view("city-view", viewData);
@@ -17,6 +15,13 @@ export const cityController = {
   },
 
   addPoe: {
+    validate: {
+      payload: PoeSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("city-view", { title: "Add poe error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const city = await db.cityStore.getCityById(request.params.id);
 
