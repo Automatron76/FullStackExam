@@ -11,6 +11,7 @@ import { userMongoStore } from "./mongo/user-mongo-store.js";
 
 import { cityMongoStore } from "./mongo/city-mongo-store.js";
 
+import { poeMongoStore } from "./mongo/poe-mongo-store.js";
 
 export const db = {
   userStore: null,
@@ -28,6 +29,8 @@ export const db = {
      case "mongo":
       this.userStore = userMongoStore;
       this.cityStore = cityMongoStore;
+      this.poeStore = poeMongoStore;
+
       connectMongo();
       break;
 
