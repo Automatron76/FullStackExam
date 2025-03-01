@@ -8,7 +8,7 @@
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**/*.js -exit",
-    "dev": "./node_modules/.bin/nodemon  src/server.js"
+    "dev": "./node_modules/.bin/nodemon src/server.js --ignore 'src/models/json/*.json'"
   },
   "repository": {
     "type": "git",
@@ -35,9 +35,11 @@
     "@hapi/boom": "^10.0.1",
     "@hapi/cookie": "^12.0.1",
     "@hapi/hapi": "^21.3.12",
+    "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
     "dotenv": "^16.4.7",
     "handlebars": "^4.7.8",
+    "hapi-swagger": "^17.3.2",
     "joi": "^17.13.3",
     "lowdb": "^7.0.1",
     "mongoose": "^8.10.1",

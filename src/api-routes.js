@@ -16,7 +16,7 @@ export const apiRoutes = [
 
   { method: "GET", path: "/api/poes", config: poeApi.find },
   { method: "GET", path: "/api/poes/{id}", config: poeApi.findOne },
-  { method: "POST", path: "/api/poes/{id}/poes", config: poeApi.create },
+  { method: "POST", path: "/api/cities/{id}/poes", config: poeApi.create },
   { method: "DELETE", path: "/api/poes", config: poeApi.deleteAll },
   { method: "DELETE", path: "/api/poes/{id}", config: poeApi.deleteOne },
 ];

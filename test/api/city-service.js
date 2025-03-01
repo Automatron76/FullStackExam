@@ -25,6 +25,8 @@ export const city2Service = {
     return res.data;
   },
 
+
+
   async createCity(city) {
     const res = await axios.post(`${this.city2Url}/api/cities`, city);
     return res.data;
@@ -47,6 +49,34 @@ export const city2Service = {
 
   async getCity(id) {
     const res = await axios.get(`${this.city2Url}/api/cities/${id}`);
+    return res.data;
+  },
+
+
+
+
+  async getAllPoes() {
+    const res = await axios.get(`${this.city2Url}/api/poes`);
+    return res.data;
+  },
+
+  async createPoe(id, poe) {
+    const res = await axios.post(`${this.city2Url}/api/cites/${id}/poes`, poe);
+    return res.data;
+  },
+
+  async deleteAllPoes() {
+    const res = await axios.delete(`${this.city2Url}/api/poes`);
+    return res.data;
+  },
+
+  async getPoe(id) {
+    const res = await axios.get(`${this.city2Url}/api/poes/${id}`);
+    return res.data;
+  },
+
+  async deletePoe(id) {
+    const res = await axios.delete(`${this.city2Url}/api/poes/${id}`);
     return res.data;
   },
 }

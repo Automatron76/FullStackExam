@@ -2,6 +2,7 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { cityController } from "./controllers/city-controller.js";
+import { poeController } from "./controllers/poe-controller.js"
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -17,8 +18,11 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addcity", config: dashboardController.addCity },
-
   { method: "GET", path: "/dashboard/deletecity/{id}", config: dashboardController.deleteCity },
   { method: "GET", path: "/city/{id}/deletepoe/{poeid}", config: cityController.deletePoe },
 
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+
+  { method: "GET", path: "/poe/{id}/editpoe/{poeid}", config: poeController.index },
+  { method: "POST", path: "/poe/{id}/updatepoe/{poeid}", config: poeController.update },
 ];
