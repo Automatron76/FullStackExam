@@ -24,4 +24,29 @@ export const city2Service = {
     const res = await axios.delete(`${this.city2Url}/api/users`);
     return res.data;
   },
+
+  async createCity(city) {
+    const res = await axios.post(`${this.city2Url}/api/cities`, city);
+    return res.data;
+  },
+
+  async deleteAllCities() {
+    const response = await axios.delete(`${this.city2Url}/api/cities`);
+    return response.data;
+  },
+
+  async deleteCity(id) {
+    const response = await axios.delete(`${this.city2Url}/api/cities/${id}`);
+    return response;
+  },
+
+  async getAllCities() {
+    const res = await axios.get(`${this.city2Url}/api/cities`);
+    return res.data;
+  },
+
+  async getCity(id) {
+    const res = await axios.get(`${this.city2Url}/api/cities/${id}`);
+    return res.data;
+  },
 }
