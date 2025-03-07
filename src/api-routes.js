@@ -19,4 +19,7 @@ export const apiRoutes = [
   { method: "POST", path: "/api/cities/{id}/poes", config: poeApi.create },
   { method: "DELETE", path: "/api/poes", config: poeApi.deleteAll },
   { method: "DELETE", path: "/api/poes/{id}", config: poeApi.deleteOne },
+
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
+
 ];

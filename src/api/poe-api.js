@@ -6,7 +6,9 @@ import { validationError } from "./logger.js";
 export const poeApi = {
 
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const poes = await db.poeStore.getAllPoes();
@@ -23,7 +25,9 @@ export const poeApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const poe = await db.poeStore.getPoeById(request.params.id);
@@ -44,7 +48,9 @@ export const poeApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const poe = await db.poeStore.addPoe(request.params.id, request.payload);
@@ -65,7 +71,9 @@ export const poeApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.poeStore.deleteAllPoes();
@@ -80,7 +88,9 @@ export const poeApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const poe = await db.poeStore.getPoeById(request.params.id);

@@ -79,4 +79,16 @@ export const city2Service = {
     const res = await axios.delete(`${this.city2Url}/api/poes/${id}`);
     return res.data;
   },
+
+  async authenticate(user) {
+    const response = await axios.post(`${this.city2Url}/api/users/authenticate`, user);
+    axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+    return response.data;
+  },
+
+  async clearAuth() {
+    axios.defaults.headers.common["Authorization"] = "";
+  }
+
+
 }

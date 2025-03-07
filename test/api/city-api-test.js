@@ -10,10 +10,15 @@ suite("City API tests", () => {
 
   let user = null;
   setup(async () => {
+    city2Service.clearAuth();
+    user = await city2Service.createUser(maggie);
+    await city2Service.authenticate(maggie);
     await city2Service.deleteAllCities();
     await city2Service.deleteAllUsers();
     user = await city2Service.createUser(maggie);
+    await city2Service.authenticate(maggie);
     mozart.userid = user._id;
+    beethovenSonatas = await city2Service.createCity(mozart);
   });
 
   teardown(async () => {});

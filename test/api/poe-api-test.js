@@ -10,6 +10,9 @@ suite("Poe API tests", () => {
 
  
   setup(async () => {
+    city2Service.clearAuth();
+    user = await city2Service.createUser(maggie);
+    await city2Service.authenticate(maggie);
     await city2Service.deleteAllCities();
     await city2Service.deleteAllUsers();
     await city2Service.deleteAllPoes();

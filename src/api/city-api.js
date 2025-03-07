@@ -6,7 +6,9 @@ import { validationError } from "./logger.js";
 
 export const cityApi = {
   find: {
-    auth: false,
+     auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const cities = await db.cityStore.getAllCities();
@@ -23,7 +25,9 @@ export const cityApi = {
   },
 
   findOne: {
-    auth: false,
+     auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const city = await db.cityStore.getCityById(request.params.id);
@@ -44,7 +48,9 @@ export const cityApi = {
   },
 
   create: {
-    auth: false,
+     auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const city = request.payload;
@@ -66,7 +72,9 @@ export const cityApi = {
   },
 
   deleteOne: {
-    auth: false,
+     auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const city = await db.cityStore.getCityById(request.params.id);
@@ -87,7 +95,9 @@ export const cityApi = {
 
 
   deleteAll: {
-    auth: false,
+     auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.cityStore.deleteAllCities();
