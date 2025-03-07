@@ -4,12 +4,15 @@ import { assertSubset } from "../test-utils.js";
 import { maggie, testUsers } from "../fixtures.js";
 import { db } from "../../src/models/db.js";
 
+
+const users = new Array(testUsers.length);
+
 suite("User API tests", () => {
   setup(async () => {
     await city2Service.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
-      testUsers[i] = await city2Service.createUser(testUsers[i]);
+      testUsers[0] = await city2Service.createUser(testUsers[i]);
     }
   });
   teardown(async () => {

@@ -16,6 +16,11 @@ import HapiSwagger from "hapi-swagger";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const result = dotenv.config();
+if (result.error) {
+  console.log(result.error.message);
+  process.exit(1);
+}
 const swaggerOptions = {
   info: {
     title: "City API",
@@ -25,13 +30,13 @@ const swaggerOptions = {
 
 async function init() {
   const server = Hapi.server({
-    port: 3000,
+    port: 3000, 
     host: "localhost",
   });
   
-  await server.register(Vision);
+ // await server.register(Vision);
   await server.register(Cookie);
-  await server.register(Inert);
+ // await server.register(Inert);
 
   await server.register([
     Inert,
@@ -56,15 +61,11 @@ async function init() {
     isCached: false, 
   });
 
-  const result = dotenv.config();
-  if (result.error) {
-  console.log(result.error.message);
-  process.exit(1);
-}
+  
 
   server.auth.strategy("session", "cookie", {
     cookie: {
-      name: "city-collector",
+      name: process.env.cookie_name,
       password: "secretpasswordnotrevealedtoanyone",
       isSecure: false,
     },

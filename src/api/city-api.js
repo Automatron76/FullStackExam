@@ -1,5 +1,8 @@
 import Boom from "@hapi/boom";
+import { IdSpec, CityArraySpec, CitySpec, CitySpecPlus } from "../models/joi-schemas.js"
 import { db } from "../models/db.js";
+import { validationError } from "./logger.js";
+
 
 export const cityApi = {
   find: {
@@ -12,6 +15,11 @@ export const cityApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+
+    tags: ["api"],
+    response: { schema: CityArraySpec, failAction: validationError },
+    description: "Get all cities",
+    notes: "Returns all citiess",
   },
 
   findOne: {
@@ -27,6 +35,12 @@ export const cityApi = {
         return Boom.serverUnavailable("No City with this id");
       }
     },
+
+    tags: ["api"],
+    description: "Find a City",
+    notes: "Returns a city",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: CitySpecPlus, failAction: validationError },
   },
 
   create: {
@@ -43,6 +57,12 @@ export const cityApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+
+    tags: ["api"],
+    description: "Create a City",
+    notes: "Returns the newly created city",
+    validate: { payload: CitySpec, failAction: validationError },
+    response: { schema: CitySpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -59,6 +79,10 @@ export const cityApi = {
         return Boom.serverUnavailable("No City with this id");
       }
     },
+
+    tags: ["api"],
+    description: "Delete a city",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
 
@@ -72,6 +96,9 @@ export const cityApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+
+    tags: ["api"],
+    description: "Delete all CityApi",
   },
 
 };

@@ -30,45 +30,45 @@ export const testUsers = [
 ];
 
 export const mozart = {
-  title: "Mozart Favourites"
+  name: "Saltzburg"
 };
 
 export const concerto = {
-  "title": "Violin Concerto No. 3",
-  "artist": "Mozart",
-  "duration": 15
+  "name": "Paris arena",
+  "address": "Saltzburg",
+  "Vduration": 15
 };
 
 export const beethoven = {
-  title: "Mozart Favourites"
+  name: "Bonn"
 };
 
 export const testCities = [
   {
-    title: "Beethoven Sonatas"
+    name: "Dublin"
   },
   {
-    title: "Beethoven Concertos"
+    name: "Paris"
   },
   {
-    title: "Beethoven Symphonies"
+    name: "Berlin"
   }
 ];
 
 export const testPoes = [
   {
-    "title": "Piano Sonata No. 3",
-    "artist": "Beethoven",
-    "duration": 5
+    "name": "Eiffel Tower",
+    "address": "Eiffel Tower",
+    "Vduration": 60
   },
   {
-    "title": "Piano Sonata No. 7",
-    "artist": "Beethoven",
-    "duration": 6
+    "name": "Dublin Castle",
+    "address": "Dame St, Dublin 2",
+    "Vduration": 40
   },
   {
-    "title": "Piano Sonata No. 10",
-    "artist": "Beethoven",
-    "duration": 4
+    "name": "Brandeburg gate",
+    "address": "Pariser Platz, 10117 Berlin",
+    "Vduration": 30
   }
 ];

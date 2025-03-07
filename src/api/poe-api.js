@@ -1,7 +1,10 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
+import { IdSpec, PoeSpec, PoeSpecPlus, PoeArraySpec } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const poeApi = {
+
   find: {
     auth: false,
     handler: async function (request, h) {
@@ -12,6 +15,11 @@ export const poeApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+
+    tags: ["api"],
+    response: { schema: PoeArraySpec, failAction: validationError },
+    description: "Get all poeApi",
+    notes: "Returns all poeApi",
   },
 
   findOne: {
@@ -27,6 +35,12 @@ export const poeApi = {
         return Boom.serverUnavailable("No poe with this id");
       }
     },
+
+    tags: ["api"],
+    description: "Find a Poe",
+    notes: "Returns a poe",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: PoeSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -42,6 +56,12 @@ export const poeApi = {
         return Boom.serverUnavailable("Database Error", err);
       }
     },
+
+    tags: ["api"],
+    description: "Create a poe",
+    notes: "Returns the newly created poe",
+    validate: { payload: PoeSpec },
+    response: { schema: PoeSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -54,6 +74,9 @@ export const poeApi = {
         return Boom.serverUnavailable("Database Error", err);
       }
     },
+
+    tags: ["api"],
+    description: "Delete all poeApi",
   },
 
   deleteOne: {
@@ -71,4 +94,6 @@ export const poeApi = {
       }
     }
   },
+  tags: ["api"],
+  description: "Delete all trackApi",
 };
